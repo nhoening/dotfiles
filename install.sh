@@ -4,7 +4,8 @@ cd ~
 
 DOIT=1
 
-for D in .vimrc .gitconfig .vim/bundle/Vundle.vim 
+# TODO: paths are not checked this way
+for D in .vimrc .gitconfig .ssh/config .vim/bundle/Vundle.vim 
 do
     echo "checking $D ..."
     if [ -f "$D" ]; then
@@ -21,6 +22,7 @@ done
 if [ $DOIT -eq 1 ]; then
     ln -s dotfiles/.vimrc
     ln -s dotfiles/.gitconfig
+    ln -s dotfiles/.sshconfig .ssh/config
 
     git clone https://github.com/gmarik/Vundle.vim.git .vim/bundle/Vundle.vim
 

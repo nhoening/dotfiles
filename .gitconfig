@@ -1,5 +1,5 @@
 [user]
-    name = Nicolas Höning
+    name = nhoening
     email = iam@nicolashoening.de
 [alias]
     switch = !legit switch \"$@\"
