@@ -21,7 +21,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-scripts/vcscommand.vim'
-Plugin 'jnwhiteh/vim-golang'
 Plugin 'Gundo'
 
 call vundle#end()          

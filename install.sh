@@ -6,6 +6,7 @@ DOIT=1
 
 for D in .vimrc .gitconfig .vim/bundle/Vundle.vim 
 do
+    echo "checking $D ..."
     if [ -f "$D" ]; then
         if [ "$1" == "-F" ]; then
             printf '%s\n' "Removing File/Folder: ($D)"
@@ -23,5 +24,16 @@ if [ $DOIT -eq 1 ]; then
 
     git clone https://github.com/gmarik/Vundle.vim.git .vim/bundle/Vundle.vim
 
-    echo "To set up your vim environment, run the command :PluginInstall after launching vim."
+    #echo "[INFO] To set up your vim environment, run the command :PluginInstall after launching vim."
+    #echo
+    #echo "[INFO] The YouCompleteMe feature for vim needs to be installed, see https://valloric.github.io/YouCompleteMe/"
 fi
+
+# install vim bundles (vundle Plugins)
+vim +PluginInstall +qall
+
+# install YouCompleteMe
+sudo apt-get install build-essential cmake python-dev
+cd ~/.vim/bundle/YouCompleteMe
+./install.sh
+
