@@ -1,0 +1,27 @@
+ControlMaster auto
+ControlPath /tmp/ssh_mux_%h_%p_%r
+
+ControlPersist 4h
+
+Host nh
+  HostName nicolashoening.de
+  User ssh-w00e4765
+
+Host cwi
+  HostName ssh.cwi.nl
+  User nicolas
+  IdentityFile ~/.ssh/id_cwi
+
+Host lisa
+  HostName lisa.surfsara.nl
+  User nicolas
+
+Host voko
+  HostName order.vokomokum.nl
+  User nicolas
+  IdentityFile ~/.ssh/id_rsa_voko
+
+Host bitbucket
+  HostName bitbucket.org
+  User nhoening
+  IdentityFile ~/.ssh/id_bitbucket
