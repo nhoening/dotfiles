@@ -1,0 +1,27 @@
+#!/bin/bash
+
+cd ~
+
+DOIT=1
+
+for D in .vimrc .gitconfig .vim/bundle/Vundle.vim 
+do
+    if [ -f "$D" ]; then
+        if [ "$1" == "-F" ]; then
+            printf '%s\n' "Removing File/Folder: ($D)"
+            rm -rf "$D"
+        else
+            printf '%s\n' "Existing: ($D). To force overwrite, call with -F option"
+            DOIT=0
+        fi
+    fi
+done
+
+if [ $DOIT -eq 1 ]; then
+    ln -s dotfiles/.vimrc
+    ln -s dotfiles/.gitconfig
+
+    git clone https://github.com/gmarik/Vundle.vim.git .vim/bundle/Vundle.vim
+
+    echo "To set up your vim environment, run the command :PluginInstall after launching vim."
+fi
