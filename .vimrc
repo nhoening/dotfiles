@@ -14,12 +14,11 @@ set wrapscan " search fron beginning if end of file is reached
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 let g:vundle_default_git_proto='git'
-let g:ycm_server_keep_logfiles = 1
-let g:ycm_server_log_level = 'debug'
+"let g:ycm_server_keep_logfiles = 1
+"let g:ycm_server_log_level = 'debug'
 
 Plugin 'gmarik/vundle'
 Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tomasr/molokai'
 Plugin 'tpope/vim-repeat'
 Plugin 'kien/ctrlp.vim'
@@ -28,7 +27,9 @@ Plugin 'sjl/gundo.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-scripts/vcscommand.vim'
+Plugin 'phleet/vim-mercenary'
+Plugin 'tpope/vim-fugitive'
+"Plugin 'vim-scripts/vcscommand.vim'
 Plugin 'Gundo'
 Plugin 'vim-scripts/pep8'
 Plugin 'mhinz/vim-signify'
@@ -36,6 +37,7 @@ Plugin 'bling/vim-airline'
 Plugin 'mitechie/pyflakes-pathogen'
 
 let g:signify_vcs_list = [ 'hg', 'git' ]
+let g:signify_line_highlight = 0
 let g:signify_mapping_toggle_highlight = '<leader>sy'
 
 
