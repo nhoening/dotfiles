@@ -3,6 +3,14 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
+
+set foldmethod=indent
+set foldlevel=99
+
+set mouse=a " catch mouse clicks for positioning                              
+set wrapscan " search fron beginning if end of file is reached
+
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 let g:vundle_default_git_proto='git'
@@ -22,6 +30,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-scripts/vcscommand.vim'
 Plugin 'Gundo'
+Plugin 'vim-scripts/pep8'
+Plugin 'mitechie/pyflakes-pathogen'
 
 call vundle#end()          
 " ==========================================================
@@ -162,7 +172,6 @@ endif
 hi DiffText gui=underline guibg=red guifg=black
 set guifont=Monaco:h14
 
-" Added
 
 " This beauty remembers where you were the last time you edited the file, and returns to the same position.
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
