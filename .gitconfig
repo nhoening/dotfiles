@@ -23,8 +23,8 @@
     dcheck = diff --check
     c = commit -m 
     undo = checkout --
-[color]
-    ui = true
+#[color]
+#    ui = true
 [diff]
     diff-algorithm = patience
 [core]

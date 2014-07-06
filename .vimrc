@@ -1,4 +1,4 @@
-" based from jeffknupps vimrc
+" originally based from jeffknupps vimrc
 
 set nocompatible               " be iMproved
 filetype off                   " required!
@@ -31,9 +31,17 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-scripts/vcscommand.vim'
 Plugin 'Gundo'
 Plugin 'vim-scripts/pep8'
+Plugin 'mhinz/vim-signify'
+Plugin 'bling/vim-airline'
 Plugin 'mitechie/pyflakes-pathogen'
 
+let g:signify_vcs_list = [ 'hg', 'git' ]
+let g:signify_mapping_toggle_highlight = '<leader>sy'
+
+
 call vundle#end()          
+
+
 " ==========================================================
 " Shortcuts
 " ==========================================================
