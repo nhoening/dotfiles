@@ -179,8 +179,21 @@ if exists("+undofile")
   set undodir+=~/.vim/undo//
   set undofile
 endif
+
+" GUI
 hi DiffText gui=underline guibg=red guifg=black
 set guifont=Monaco:h14
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 14
+    set linespace=5
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
+endif
+
 
 
 " This beauty remembers where you were the last time you edited the file, and returns to the same position.
