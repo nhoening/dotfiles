@@ -37,7 +37,7 @@ Plugin 'bling/vim-airline'
 Plugin 'mitechie/pyflakes-pathogen'
 
 let g:signify_vcs_list = [ 'hg', 'git' ]
-let g:signify_line_highlight = 0
+let g:signify_line_highlight = 1
 let g:signify_mapping_toggle_highlight = '<leader>sy'
 let g:pep8_map='<leader>8'
 
