@@ -23,6 +23,7 @@ if [ $DOIT -eq 1 ]; then
     ln -fs dotfiles/.bashrc
     ln -fs dotfiles/.vimrc
     ln -fs dotfiles/.gitconfig
+    ln -fs dotfiles/.gitignore_global
     ln -fs dotfiles/.hgrc
     mkdir -p ~/.ssh
     ln -fs ~/dotfiles/.sshconfig ~/.ssh/config

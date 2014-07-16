@@ -2,4 +2,6 @@
 	email = iam@nicolashoening.de
 	name = nhoening
 [push]
-	default = simple
+    default = simple
+[core]
+    excludesfile = ~/.gitignore_global
