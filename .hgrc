@@ -1,3 +1,3 @@
 [ui]
-username = nhoening
+username = Nicolas Höning <nicolas@softwear.nl>
 ssh = ssh -C

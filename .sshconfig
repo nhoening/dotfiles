@@ -25,3 +25,8 @@ Host bitbucket
   HostName bitbucket.org
   User nhoening
   IdentityFile ~/.ssh/id_bitbucket
+
+Host dbmapp2
+  HostName dbmapp2_test.swcloud.nl
+  User ubuntu
+  IdentityFile ~/ssh_keys/softwear_eu_prod.pem

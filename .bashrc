@@ -2,8 +2,9 @@ export SVN_EDITOR=vim
 export GIT_EDITOR=vim
 export HG_EDITOR=vim
 
-source ~/dotfiles/liquidprompt/liquidprompt
+source ~/liquidprompt/liquidprompt
 
+alias sw="ssh-add ~/.ssh/id_bitbucket; cd ~/workspace/softwear.tools; source ../env/bin/activate"
 alias api="ssh-add ~/.ssh/id_bitbucket; cd ~/vapi/src/spynl.tools; source ../../bin/activate"
 
 # two-line prompt to save horizontal space
