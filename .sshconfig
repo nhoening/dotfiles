@@ -35,3 +35,8 @@ Host buildserver
   HostName build_process.swcloud.nl
   User ubuntu
   IdentityFile ~/ssh_keys/softwear_eu_prod.pem
+
+Host jenkins
+  HostName jenkins.swcloud.nl
+  User ubuntu
+  IdentityFile ~/ssh_keys/softwear_eu_test.pem
