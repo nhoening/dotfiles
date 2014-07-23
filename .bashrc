@@ -2,13 +2,11 @@ export SVN_EDITOR=vim
 export GIT_EDITOR=vim
 export HG_EDITOR=vim
 
-source ~/liquidprompt/liquidprompt
+. ~/multi-shell-repo-prompt/prompt.sh
 
 alias sw="ssh-add ~/.ssh/id_bitbucket; cd ~/workspace/softwear.tools; source ../env/bin/activate"
 alias api="ssh-add ~/.ssh/id_bitbucket; cd ~/vapi/src/spynl.tools; source ../../bin/activate"
 
-# two-line prompt to save horizontal space
-export PS1="\u@\h:\w\n$ "
 # exclude certain things from history
 export HISTIGNORE="&:ls:vdir:[bf]g:exit"
 # no accidental closing with ctrl-d

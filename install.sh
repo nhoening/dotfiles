@@ -34,20 +34,25 @@ if [ $DOIT -eq 1 ]; then
         git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     fi
 
-    if [ -d "liquidprompt" ]; then
-        cd liquidprompt; git pull; cd ..
+    if [ -d "hg-prompt" ]; then
+        cd hg-prompt; hg pull; hg update; cd ..
     else
-        git clone https://github.com/nojhan/liquidprompt.git
+        hg clone http://bitbucket.org/sjl/hg-prompt/
     fi
+    if [ -d "multi-shell-repo-prompt" ]; then
+        cd multi-shell-repo-prompt; git pull; cd ..
+    else
+        git clone https://github.com/dotcode/multi-shell-repo-prompt.git
+    fi
+    
+    # install YouCompleteMe
+    #sudo apt-get install build-essential cmake python-dev vim-gtk
+    #cd ~/.vim/bundle/YouCompleteMe
+    #./install.sh
+    #cd ~
 
     # install vim bundles (vundle Plugins)
     vim +PluginInstall +qall
 
-    # install YouCompleteMe
-    # Non-debian: To set up your vim environment, run the command :PluginInstall after launching vim.
-    #sudo apt-get install build-essential cmake python-dev
-    #cd ~/.vim/bundle/YouCompleteMe
-    #./install.sh
-    cd ~
-
+    source ~/.bashrc
 fi

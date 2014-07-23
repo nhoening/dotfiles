@@ -1,3 +1,6 @@
 [ui]
 username = Nicolas Höning <nicolas@softwear.nl>
 ssh = ssh -C
+
+[extensions]
+prompt = ~/hg-prompt/prompt.py
