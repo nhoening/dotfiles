@@ -5,7 +5,7 @@ cd ~
 DOIT=1
 
 # check if files exist
-for F in .bashrc .vimrc .gitconfig .hgrc .ssh/config  
+for F in .bashrc .zshrc .vimrc .gitconfig .hgrc .ssh/config  
 do
     echo "checking $F ..."
     if [ -f "$F" ]; then
@@ -21,6 +21,7 @@ done
 
 if [ $DOIT -eq 1 ]; then
     ln -fs dotfiles/.bashrc
+    ln -fs dotfiles/.zshhrc
     ln -fs dotfiles/.vimrc
     ln -fs dotfiles/.gitconfig
     ln -fs dotfiles/.gitignore_global
@@ -28,12 +29,26 @@ if [ $DOIT -eq 1 ]; then
     mkdir -p ~/.ssh
     ln -fs ~/dotfiles/.sshconfig ~/.ssh/config
 
+    # Get ZSH configured
+    if [ -d ".oh-my-zsh" ]; then
+        cd .oh-my-zsh; git pull; cd ..
+    else
+        git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    fi
+    if [ -d ".oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
+        cd .oh-my-szh/custom/plugins/zsh-syntax-highlighting; git pull; cd ../../../..
+    else
+        git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    fi
+  
+    # Get VIM bundle (plugin) infrastructure
     if [ -d ".vim/bundle/Vundle.vim" ]; then
         cd .vim/bundle/Vundle.vim; git pull; cd ../../..
     else
         git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     fi
-
+   
+    # Get a repository-centric prompt
     if [ -d "hg-prompt" ]; then
         cd hg-prompt; hg pull; hg update; cd ..
     else
@@ -54,5 +69,6 @@ if [ $DOIT -eq 1 ]; then
     # install vim bundles (vundle Plugins)
     vim +PluginInstall +qall
 
-    source ~/.bashrc
+    # I currently want to use ZSH
+    chsh -s /bin/zsh
 fi
