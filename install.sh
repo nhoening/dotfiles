@@ -21,7 +21,7 @@ done
 
 if [ $DOIT -eq 1 ]; then
     ln -fs dotfiles/.bashrc
-    ln -fs dotfiles/.zshhrc
+    ln -fs dotfiles/.zshrc
     ln -fs dotfiles/.vimrc
     ln -fs dotfiles/.gitconfig
     ln -fs dotfiles/.gitignore_global
@@ -36,7 +36,7 @@ if [ $DOIT -eq 1 ]; then
         git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     fi
     if [ -d ".oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
-        cd .oh-my-szh/custom/plugins/zsh-syntax-highlighting; git pull; cd ../../../..
+        cd .oh-my-zsh/custom/plugins/zsh-syntax-highlighting; git pull; cd ../../../..
     else
         git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     fi
@@ -68,6 +68,9 @@ if [ $DOIT -eq 1 ]; then
 
     # install vim bundles (vundle Plugins)
     vim +PluginInstall +qall
+
+    # install pythonpy for command line
+    sudo pip install pythonpy
 
     # I currently want to use ZSH
     chsh -s /bin/zsh
