@@ -61,7 +61,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin"
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='gvim'
 fi
 
 # Compilation flags
@@ -80,4 +80,8 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 #
+# Nics additions
+alias sw="ssh-add ~/.ssh/id_bitbucket; cd ~/workspace/softwear.tools; source ../env/bin/activate"
+alias api="ssh-add ~/.ssh/id_bitbucket; cd ~/vapi/src/spynl.tools; source ../../bin/activate"
+
 source ~/multi-shell-repo-prompt/prompt.sh
