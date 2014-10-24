@@ -45,3 +45,8 @@ Host jenkins
   HostName 54.72.34.95
   User ubuntu
   IdentityFile ~/ssh_keys/softwear_eu_test_2014.pem
+
+Host dashboards
+  HostName 54.171.90.4
+  User ubuntu
+  IdentityFile ~/ssh_keys/softwear_eu_test_2014.pem
