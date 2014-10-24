@@ -1,8 +1,7 @@
-" originally based from jeffknupps vimrc
+" originally based from jeffknupps vimrc, then expanded
 
 set nocompatible               " be iMproved
 filetype off                   " required!
-
 
 set foldmethod=indent
 set foldlevel=99
@@ -86,6 +85,8 @@ set background=dark           " We are using dark background in vim
 set title                     " show title in console title bar
 set wildmenu                  " Menu completion in command mode on <Tab>
 set wildmode=full             " <Tab> cycles between all matching choices.
+
+set enc=utf-8                 " the best all-purpose encoding
 
 " don't bell or blink
 set noerrorbells
