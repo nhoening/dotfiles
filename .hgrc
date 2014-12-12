@@ -3,5 +3,19 @@ username = Nicolas Höning <nicolas@softwear.nl>
 ssh = ssh -C
 
 [extensions]
+color =
+graphlog =
+progress =
+pager =
 prompt = ~/hg-prompt/prompt.py
-progress = 
+onsub = ~/workspace/softwear.ci/dev/onsub.py
+
+
+[alias]
+lga = glog --style=~/dotfiles/hg-map-cmdline.lg
+
+
+[pager]
+pager = LESS='FSRX' less
+attend = cat, diff, glog, log, incoming, outgoing, lg, show, lga
+

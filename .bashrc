@@ -3,6 +3,7 @@ export GIT_EDITOR=vim
 export HG_EDITOR=vim
 
 . ~/multi-shell-repo-prompt/prompt.sh
+. ~/dotfiles/hg-completion.bash
 
 alias sw="ssh-add ~/.ssh/id_bitbucket; cd ~/workspace/softwear.tools; source ../env/bin/activate"
 alias api="ssh-add ~/.ssh/id_bitbucket; cd ~/vapi/src/spynl.tools; source ../../bin/activate"
