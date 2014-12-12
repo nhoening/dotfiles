@@ -42,11 +42,16 @@ Host buildtest
   IdentityFile ~/ssh_keys/softwear_eu_test_2014.pem
 
 Host jenkins
-  HostName 54.72.34.95
+  HostName 54.171.223.175
   User ubuntu
   IdentityFile ~/ssh_keys/softwear_eu_test_2014.pem
 
-Host dashboards
+Host dashboard
   HostName 54.171.90.4
+  User ubuntu
+  IdentityFile ~/ssh_keys/softwear_eu_test_2014.pem
+
+Host alpha
+  HostName 54.171.133.33
   User ubuntu
   IdentityFile ~/ssh_keys/softwear_eu_test_2014.pem
