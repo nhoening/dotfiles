@@ -85,4 +85,5 @@ alias sw="ssh-add ~/.ssh/id_bitbucket; cd ~/workspace/softwear.tools; source ../
 alias api="ssh-add ~/.ssh/id_bitbucket; cd ~/vapi/src/spynl.tools; source ../../bin/activate"
 
 source ~/multi-shell-repo-prompt/prompt.sh
-source ~/dotfiles/hg-completion.bash
+#source ~/dotfiles/hg-completion.bash  # is bash-specific
+source ~/dotfiles/git-completion.bash
