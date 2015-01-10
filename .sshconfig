@@ -26,6 +26,11 @@ Host bitbucket
   User nhoening
   IdentityFile ~/.ssh/id_bitbucket
 
+Host bitbucket-swbot
+  HostName bitbucket.org
+  User softwearbot
+  IdentityFile ~/.ssh/id_softwearbot
+
 Host dbmapp2
   HostName dbmapp2_test.swcloud.nl
   User ubuntu
