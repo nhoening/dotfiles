@@ -6,8 +6,8 @@ export HG_EDITOR=vim
 . ~/dotfiles/hg-completion.bash
 . ~/dotfiles/git-completion.bash
 
-alias sw="ssh-add ~/.ssh/id_bitbucket; cd ~/workspace/softwear.tools; source ../env/bin/activate"
-alias api="ssh-add ~/.ssh/id_bitbucket; cd ~/vapi/src/spynl.tools; source ../../bin/activate"
+alias sw="ssh-add ~/.ssh/id_bitbucket; cd ~/workspace; source ../env/bin/activate"
+alias api="ssh-add ~/.ssh/id_bitbucket; cd ~/workspace/api/spynl.tools; source ../bin/activate"
 
 
 # ---- History settings

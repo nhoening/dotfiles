@@ -82,7 +82,7 @@ fi
 #
 # Nics additions
 alias sw="ssh-add ~/.ssh/id_bitbucket; cd ~/workspace/softwear.tools; source ../env/bin/activate"
-alias api="ssh-add ~/.ssh/id_bitbucket; cd ~/vapi/src/spynl.tools; source ../../bin/activate"
+alias api="ssh-add ~/.ssh/id_bitbucket; cd ~/workspace/api/src/spynl.tools; source ../bin/activate"
 
 source ~/multi-shell-repo-prompt/prompt.sh
 #source ~/dotfiles/hg-completion.bash  # is bash-specific
