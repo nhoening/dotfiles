@@ -19,6 +19,7 @@ Host lisa
 Host voko
   HostName order.vokomokum.nl
   User nicolas
+  IdentitiesOnly yes
   IdentityFile ~/.ssh/id_rsa_voko
 
 Host bitbucket
