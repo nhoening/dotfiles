@@ -1,6 +1,7 @@
 [ui]
 username = Nicolas Höning <nicolas@softwear.nl>
 ssh = ssh -C
+merge = vimdiff
 
 [extensions]
 color =
@@ -10,10 +11,13 @@ pager =
 prompt = ~/hg-prompt/prompt.py
 onsub = ~/workspace/softwear.ci/dev/onsub.py
 
+[merge-tools]
+vimdiff.executable = gvimdiff
+vimdiff.args = -f -d $output -M $local $base $other -c "wincmd J" -c "set modifiable" -c "set write"
+vimdiff.premerge = keep
 
 [alias]
 lga = glog --style=~/dotfiles/hg-map-cmdline.lg
-
 
 [pager]
 pager = LESS='FSRX' less
