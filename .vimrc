@@ -32,13 +32,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Gundo'
 Plugin 'vim-scripts/pep8'
 Plugin 'mhinz/vim-signify'
-  Plugin 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
 Plugin 'mitechie/pyflakes-pathogen'
 Plugin 'morhetz/gruvbox'
 
 let g:signify_vcs_list = [ 'hg', 'git' ]
 let g:signify_line_highlight = 1
-let g:signify_mapping_toggle_highlight = '<leader>sy'
 let g:pep8_map='<leader>8'
 
 call vundle#end()          
@@ -168,8 +167,9 @@ map <C-space> :bn <CR>
 map <C-M-space> :bp <CR>
 
 colorscheme gruvbox
-"set background=dark
-set background=light
+"colorscheme solarized
+set background=dark
+"set background=light
 
 set noswapfile
 if exists("+undofile")
@@ -197,9 +197,6 @@ if has("gui_running")
   elseif has("gui_win32")
     set guifont=Consolas:h11:cANSI
   endif
-  else
-    colorscheme solarized
-    set background=dark
 endif
 
 
