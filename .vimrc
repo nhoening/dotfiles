@@ -32,8 +32,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Gundo'
 Plugin 'vim-scripts/pep8'
 Plugin 'mhinz/vim-signify'
-Plugin 'bling/vim-airline'
+  Plugin 'bling/vim-airline'
 Plugin 'mitechie/pyflakes-pathogen'
+Plugin 'morhetz/gruvbox'
 
 let g:signify_vcs_list = [ 'hg', 'git' ]
 let g:signify_line_highlight = 1
@@ -166,8 +167,9 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 map <C-space> :bn <CR>
 map <C-M-space> :bp <CR>
 
-colorscheme solarized
-set background=dark
+colorscheme gruvbox
+"set background=dark
+set background=light
 
 set noswapfile
 if exists("+undofile")
@@ -195,6 +197,9 @@ if has("gui_running")
   elseif has("gui_win32")
     set guifont=Consolas:h11:cANSI
   endif
+  else
+    colorscheme solarized
+    set background=dark
 endif
 
 
