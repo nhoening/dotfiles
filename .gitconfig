@@ -1,6 +1,6 @@
 [user]
-	email = iam@nicolashoening.de
-	name = nhoening
+    email = iam@nicolashoening.de
+    name = nhoening
 [push]
     default = simple
 [core]
