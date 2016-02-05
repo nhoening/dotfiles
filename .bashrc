@@ -9,6 +9,9 @@ export HG_EDITOR=vim
 alias sw="ssh-add ~/.ssh/id_bitbucket; cd ~/workspace; source ../swenv/bin/activate"
 alias spynl="ssh-add ~/.ssh/id_bitbucket; cd ~/workspace/spynl/spynl.tools; source ../bin/activate"
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # ---- History settings
 # append to same history from all windows

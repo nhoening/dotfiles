@@ -81,8 +81,11 @@ fi
 #
 #
 # Nics additions
-alias sw="ssh-add ~/.ssh/id_bitbucket; cd ~/workspace; source swenv/bin/activate"
-alias spynl="ssh-add ~/.ssh/id_bitbucket; cd ~/workspace/spynl/spynl.tools; source ../bin/activate"
+alias spynl="ssh-add ~/.ssh/id_rsa_bitbucket; cd ~/workspace/spynl/spynl.tools; source ../bin/activate"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 source ~/multi-shell-repo-prompt/prompt.sh
 #source ~/dotfiles/hg-completion.bash  # is bash-specific

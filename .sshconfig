@@ -10,6 +10,7 @@ Host nh
 Host cwi
   HostName ssh.cwi.nl
   User nicolas
+  IdentitiesOnly yes
   IdentityFile ~/.ssh/id_cwi
 
 Host lisa
@@ -22,11 +23,17 @@ Host voko
   IdentitiesOnly yes
   IdentityFile ~/.ssh/id_rsa_voko
 
-Host bitbucket
+Host bitbucket.org
   HostName bitbucket.org
   User nhoening
   IdentitiesOnly yes
-  IdentityFile ~/.ssh/id_bitbucket
+  IdentityFile ~/.ssh/id_rsa_bitbucket
+
+Host bitbucket-spynl
+  HostName bitbucket.org
+  User nhoening
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa_bitbucket
 
 Host bitbucket-swbot
   HostName bitbucket.org
@@ -35,7 +42,7 @@ Host bitbucket-swbot
   IdentityFile ~/.ssh/id_softwearbot
 
 Host jenkins
-  HostName 54.171.223.175
+  HostName 172.30.0.171
   User ubuntu
   IdentitiesOnly yes
   IdentityFile ~/ssh_keys/softwear_eu_test_2014.pem
@@ -47,13 +54,25 @@ Host dashboard
   IdentityFile ~/ssh_keys/softwear_eu_test_2014.pem
 
 Host spynl.dev
-  HostName 54.154.156.101
+  HostName 172.30.1.205
   User ubuntu
   IdentitiesOnly yes
   IdentityFile ~/ssh_keys/softwear_eu_test_2014.pem
 
-Host TestDB
-  HostName 54.72.16.158
+Host cron-test
+  HostName 52.48.230.209
   User ubuntu
   IdentitiesOnly yes
-  IdentityFile ~/ssh_keys/unitt_aws_key.pem
+  IdentityFile ~/ssh_keys/unitt-softwear-shared.pem
+
+Host cron-staging
+  HostName 52.17.63.231
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/ssh_keys/unitt-softwear-shared.pem
+
+Host cron-production
+  HostName 52.31.66.178
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/ssh_keys/unitt-softwear-shared.pem

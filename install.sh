@@ -69,8 +69,13 @@ if [ $DOIT -eq 1 ]; then
     # install vim bundles (vundle Plugins)
     vim +PluginInstall +qall
 
-    # install pythonpy for command line
-    sudo pip install pythonpy
+    # install pyenv
+    if [ -d ".pyenv" ]; then
+        cd .pyenv; git pull; cd ..
+    else
+        git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+    fi
+    
 
     # I currently want to use ZSH
     chsh -s /bin/zsh
