@@ -70,10 +70,10 @@ Host cron-staging
   HostName cron.staging.softwearconnect.com
   User ubuntu
   IdentitiesOnly yes
-  IdentityFile ~/ssh_keys/unitt_aws_key.pem
+  IdentityFile ~/.ssh/id_rsa_nic
 
 Host cron-production
   HostName cron.production.softwearconnect.com
   User ubuntu
   IdentitiesOnly yes
-  IdentityFile ~/ssh_keys/unitt_aws_key.pem
+  IdentityFile ~/.ssh/id_rsa_nic
