@@ -75,13 +75,10 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
 #
 # Nics additions
 alias spynl="ssh-add ~/.ssh/id_rsa_bitbucket; cd ~/workspace/spynl/spynl.tools; source ../bin/activate"
+alias vpn="cd ~/workspace/sw-vpn/vpn_spynl-dev_nicolas && sudo openvpn openvpn-client.cfg"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -90,3 +87,7 @@ eval "$(pyenv init -)"
 source ~/multi-shell-repo-prompt/prompt.sh
 #source ~/dotfiles/hg-completion.bash  # is bash-specific
 source ~/dotfiles/git-completion.bash
+
+
+# added by Pew
+#source $(pew shell_config)

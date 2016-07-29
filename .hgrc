@@ -8,8 +8,11 @@ color =
 graphlog =
 progress =
 pager =
+shelve =
 prompt = ~/hg-prompt/prompt.py
 onsub = ~/workspace/softwear.ci/dev/onsub.py
+rebase =
+histedit = 
 
 [merge-tools]
 vimdiff.executable = gvimdiff
@@ -17,7 +20,10 @@ vimdiff.args = -f -d $output -M $local $base $other -c "wincmd J" -c "set modifi
 vimdiff.premerge = keep
 
 [alias]
-lga = glog --style=~/dotfiles/hg-map-cmdline.lg
+lga = glog --style=$HOME/workspace/dotfiles/mercurial-cli-templates/map-cmdline.lg
+slog = log --style=$HOME/workspace/dotfiles/mercurial-cli-templates/map-cmdline.slog
+nlog = log --style=$HOME/workspace/dotfiles/mercurial-cli-templates/map-cmdline.nlog
+sglog = glog --style=$HOME/workspace/dotfiles/mercurial-cli-templates/map-cmdline.sglog
 
 [pager]
 pager = LESS='FSRX' less

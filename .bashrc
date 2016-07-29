@@ -6,8 +6,8 @@ export HG_EDITOR=vim
 . ~/dotfiles/hg-completion.bash
 . ~/dotfiles/git-completion.bash
 
-alias sw="ssh-add ~/.ssh/id_bitbucket; cd ~/workspace; source ../swenv/bin/activate"
-alias spynl="ssh-add ~/.ssh/id_bitbucket; cd ~/workspace/spynl/spynl.tools; source ../bin/activate"
+alias spynl="ssh-add ~/.ssh/id_rsa_bitbucket; cd ~/workspace/spynl/spynl.tools; source ../bin/activate"
+alias vpn="cd ~/workspace/sw-vpn/vpn_spynl-dev_nicolas && sudo openvpn openvpn-client.cfg"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"

@@ -5,6 +5,7 @@ ControlPath /tmp/ssh_mux_%h_%p_%r
 
 Host nh
   HostName nicolashoening.de
+  IdentitiesOnly yes
   User ssh-w00e4765
 
 Host cwi
@@ -21,7 +22,7 @@ Host voko
   HostName order.vokomokum.nl
   User nicolas
   IdentitiesOnly yes
-  IdentityFile ~/.ssh/id_rsa_voko
+  IdentityFile ~/.ssh/id_vkmkm
 
 Host bitbucket.org
   HostName bitbucket.org
@@ -42,7 +43,7 @@ Host bitbucket-swbot
   IdentityFile ~/.ssh/id_softwearbot
 
 Host jenkins
-  HostName 172.30.0.171
+  HostName jenkins-local.swcloud.nl
   User ubuntu
   IdentitiesOnly yes
   IdentityFile ~/ssh_keys/softwear_eu_test_2014.pem
@@ -60,19 +61,19 @@ Host spynl.dev
   IdentityFile ~/ssh_keys/softwear_eu_test_2014.pem
 
 Host cron-test
-  HostName 52.48.230.209
+  HostName cron.test.softwearconnect.com
   User ubuntu
   IdentitiesOnly yes
-  IdentityFile ~/ssh_keys/unitt-softwear-shared.pem
+  IdentityFile ~/.ssh/id_rsa_nic
 
 Host cron-staging
-  HostName 52.17.63.231
+  HostName cron.staging.softwearconnect.com
   User ubuntu
   IdentitiesOnly yes
-  IdentityFile ~/ssh_keys/unitt-softwear-shared.pem
+  IdentityFile ~/ssh_keys/unitt_aws_key.pem
 
 Host cron-production
-  HostName 52.31.66.178
+  HostName cron.production.softwearconnect.com
   User ubuntu
   IdentitiesOnly yes
-  IdentityFile ~/ssh_keys/unitt-softwear-shared.pem
+  IdentityFile ~/ssh_keys/unitt_aws_key.pem
