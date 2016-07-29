@@ -29,6 +29,9 @@ if [ $DOIT -eq 1 ]; then
     mkdir -p ~/.ssh
     ln -fs ~/dotfiles/.sshconfig ~/.ssh/config
 
+    # make sure necessary tools are there
+    apt-get install vim-gtk git mercurial tmux
+
     # Get ZSH configured
     if [ -d ".oh-my-zsh" ]; then
         cd .oh-my-zsh; git pull; cd ..
@@ -68,6 +71,12 @@ if [ $DOIT -eq 1 ]; then
 
     # install vim bundles (vundle Plugins)
     vim +PluginInstall +qall
+
+    # configure tmux
+    sudo apt-get install python3 python3-pip
+    sudo pip3 install powerline_status
+    ln -s dotfiles/.tmux.config 
+    tmux source ~/.tmux.config
 
     # install pyenv
     if [ -d ".pyenv" ]; then
