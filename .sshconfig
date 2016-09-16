@@ -36,12 +36,6 @@ Host bitbucket-spynl
   IdentitiesOnly yes
   IdentityFile ~/.ssh/id_rsa_bitbucket
 
-Host bitbucket-swbot
-  HostName bitbucket.org
-  User softwearbot
-  IdentitiesOnly yes
-  IdentityFile ~/.ssh/id_softwearbot
-
 Host jenkins
   HostName jenkins-local.swcloud.nl
   User ubuntu

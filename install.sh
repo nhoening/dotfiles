@@ -26,6 +26,7 @@ if [ $DOIT -eq 1 ]; then
     ln -fs dotfiles/.gitconfig
     ln -fs dotfiles/.gitignore_global
     ln -fs dotfiles/.hgrc
+    ln -fs dotfiles/.pdbrc.py
     mkdir -p ~/.ssh
     ln -fs ~/dotfiles/.sshconfig ~/.ssh/config
 
@@ -64,10 +65,10 @@ if [ $DOIT -eq 1 ]; then
     fi
     
     # install YouCompleteMe
-    #sudo apt-get install build-essential cmake python-dev vim-gtk
-    #cd ~/.vim/bundle/YouCompleteMe
-    #./install.sh
-    #cd ~
+    sudo apt-get install build-essential cmake python-dev python3-dev
+    cd ~/.vim/bundle/YouCompleteMe
+    ./install.py
+    cd ~
 
     # install vim bundles (vundle Plugins)
     vim +PluginInstall +qall

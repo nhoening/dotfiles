@@ -78,7 +78,7 @@ fi
 #
 # Nics additions
 alias spynl="ssh-add ~/.ssh/id_rsa_bitbucket; cd ~/workspace/spynl/spynl.tools; source ../bin/activate"
-alias vpn="cd ~/workspace/sw-vpn/vpn_spynl-dev_nicolas && sudo openvpn openvpn-client.cfg"
+alias vpn="cd ~/workspace/vpn_spynl-dev_nicolas && sudo openvpn openvpn-client.cfg"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
