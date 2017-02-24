@@ -8,16 +8,6 @@ Host nh
   IdentitiesOnly yes
   User ssh-w00e4765
 
-Host cwi
-  HostName ssh.cwi.nl
-  User nicolas
-  IdentitiesOnly yes
-  IdentityFile ~/.ssh/id_cwi
-
-Host lisa
-  HostName lisa.surfsara.nl
-  User nicolas
-
 Host voko
   HostName order.vokomokum.nl
   User nicolas
@@ -25,12 +15,6 @@ Host voko
   IdentityFile ~/.ssh/id_vkmkm
 
 Host bitbucket.org
-  HostName bitbucket.org
-  User nhoening
-  IdentitiesOnly yes
-  IdentityFile ~/.ssh/id_rsa_bitbucket
-
-Host bitbucket-spynl
   HostName bitbucket.org
   User nhoening
   IdentitiesOnly yes
