@@ -8,16 +8,6 @@ Host nh
   IdentitiesOnly yes
   User ssh-w00e4765
 
-Host cwi
-  HostName ssh.cwi.nl
-  User nicolas
-  IdentitiesOnly yes
-  IdentityFile ~/.ssh/id_cwi
-
-Host lisa
-  HostName lisa.surfsara.nl
-  User nicolas
-
 Host voko
   HostName order.vokomokum.nl
   User nicolas
@@ -42,18 +32,6 @@ Host jenkins
   IdentitiesOnly yes
   IdentityFile ~/ssh_keys/softwear_eu_test_2014.pem
 
-Host dashboard
-  HostName 54.171.90.4
-  User ubuntu
-  IdentitiesOnly yes
-  IdentityFile ~/ssh_keys/softwear_eu_test_2014.pem
-
-Host spynl.dev
-  HostName 172.30.1.205
-  User ubuntu
-  IdentitiesOnly yes
-  IdentityFile ~/ssh_keys/softwear_eu_test_2014.pem
-
 Host cron-test
   HostName cron.test.softwearconnect.com
   User ubuntu
@@ -71,3 +49,9 @@ Host cron-production
   User ubuntu
   IdentitiesOnly yes
   IdentityFile ~/.ssh/id_rsa_nic
+
+Host aws-ecs
+  HostName spynl-ecs.dev.swcloud.nl
+  User ec2-user
+  IdentitiesOnly yes
+  IdentityFile ~/ssh_keys/softwear_eu_test_2016.pem

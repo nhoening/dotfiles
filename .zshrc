@@ -26,7 +26,7 @@ ZSH_THEME="robbyrussell"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -77,7 +77,6 @@ fi
 #
 #
 # Nics additions
-alias spynl="ssh-add ~/.ssh/id_rsa_bitbucket; cd ~/workspace/spynl/spynl.tools; source ../bin/activate"
 alias vpn="cd ~/workspace/vpn_spynl-dev_nicolas && sudo openvpn openvpn-client.cfg"
 
 export PYENV_ROOT="$HOME/.pyenv"
