@@ -20,12 +20,6 @@ Host bitbucket.org
   IdentitiesOnly yes
   IdentityFile ~/.ssh/id_rsa_bitbucket
 
-Host bitbucket-spynl
-  HostName bitbucket.org
-  User nhoening
-  IdentitiesOnly yes
-  IdentityFile ~/.ssh/id_rsa_bitbucket
-
 Host jenkins
   HostName jenkins-local.swcloud.nl
   User ubuntu

@@ -79,14 +79,11 @@ fi
 # Nics additions
 alias vpn="cd ~/workspace/vpn_spynl-dev_nicolas && sudo openvpn openvpn-client.cfg"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 source ~/multi-shell-repo-prompt/prompt.sh
 #source ~/dotfiles/hg-completion.bash  # is bash-specific
 source ~/dotfiles/git-completion.bash
 
+export JAVA_HOME="/usr/java/latest8"
 
 # added by Pew
 #source $(pew shell_config)

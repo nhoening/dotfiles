@@ -8,10 +8,6 @@ export HG_EDITOR=vim
 
 alias vpn="cd ~/workspace/sw-vpn/vpn_spynl-dev_nicolas && sudo openvpn openvpn-client.cfg"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 # ---- History settings
 # append to same history from all windows
 shopt -s histappend
@@ -25,3 +21,4 @@ export IGNOREEOF=1
 #"e\[A": history-search-backward
 #"e\[B": history-search-forward
 
+export JAVA_HOME="/usr/java/latest8"

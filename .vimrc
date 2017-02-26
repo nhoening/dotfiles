@@ -24,7 +24,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'plasticboy/vim-markdown' 
 Plugin 'sjl/gundo.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'phleet/vim-mercenary'
 Plugin 'tpope/vim-fugitive'
@@ -204,4 +204,14 @@ endif
 " This beauty remembers where you were the last time you edited the file, and returns to the same position.
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
+" Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_checkers = ['pylint']

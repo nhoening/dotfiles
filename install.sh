@@ -79,14 +79,6 @@ if [ $DOIT -eq 1 ]; then
     ln -s dotfiles/.tmux.config 
     tmux source ~/.tmux.config
 
-    # install pyenv
-    if [ -d ".pyenv" ]; then
-        cd .pyenv; git pull; cd ..
-    else
-        git clone https://github.com/yyuu/pyenv.git ~/.pyenv
-    fi
-    
-
     # I currently want to use ZSH
     chsh -s /bin/zsh
 fi
