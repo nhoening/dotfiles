@@ -77,7 +77,6 @@ fi
 #
 #
 # Nics additions
-alias vpn="cd ~/workspace/vpn_spynl-dev_nicolas && sudo openvpn openvpn-client.cfg"
 
 source ~/multi-shell-repo-prompt/prompt.sh
 #source ~/dotfiles/hg-completion.bash  # is bash-specific

@@ -20,28 +20,23 @@ Plugin 'gmarik/vundle'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'tomasr/molokai'
 Plugin 'tpope/vim-repeat'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'  " file/buffer finder :CtrlP [starting-directory]
 Plugin 'plasticboy/vim-markdown' 
-Plugin 'sjl/gundo.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'phleet/vim-mercenary'
-Plugin 'tpope/vim-fugitive'
-"Plugin 'vim-scripts/vcscommand.vim'
-Plugin 'Gundo'
-Plugin 'vim-scripts/pep8'
-Plugin 'mhinz/vim-signify'
+Plugin 'phleet/vim-mercenary'  " :HGdiff {rev}, :Hgblame
+Plugin 'tpope/vim-fugitive'  " :Git {command}, :Gstatus, :Gblame
+Plugin 'mhinz/vim-signify'  " show SCM status of lines
 Plugin 'itchyny/lightline.vim'
 Plugin 'mitechie/pyflakes-pathogen'
-Plugin 'morhetz/gruvbox'
+Plugin 'morhetz/gruvbox'  " retro colour scheme
+Plugin 'altercation/vim-colors-solarized'
 
 let g:signify_vcs_list = [ 'hg', 'git' ]
 let g:signify_line_highlight = 1
-let g:pep8_map='<leader>8'
+let g:pycodestyle_map='<leader>8'
 
 call vundle#end()          
-
 
 " ==========================================================
 " Shortcuts
@@ -70,9 +65,6 @@ map <c-h> <c-w>h
 " and lets make these all work in insert mode too ( <C-O> makes next cmd
 "  happen as if in command mode )
 imap <C-W> <C-O><C-W>
-
-" Load the Gundo window
-map <leader>g :GundoToggle<CR>
 
 " ==========================================================
 " Basic Settings
@@ -113,7 +105,7 @@ set scrolloff=3             " Keep 3 context lines above and below the cursor
 set backspace=2             " Allow backspacing over autoindent, EOL, and BOL
 set showmatch               " Briefly jump to a paren once it's balanced
 set wrap                    " Wrap text
-set linebreak               " don't wrap textin the middle of a word
+set linebreak               " don't wrap text in the middle of a word
 set autoindent              " always set autoindenting on
 set smartindent             " use smart indent if there is no indent file
 set tabstop=4               " <tab> inserts 4 spaces 
@@ -122,7 +114,7 @@ set softtabstop=4           " <BS> over an autoindent deletes both spaces.
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set shiftround              " rounds indent to a multiple of shiftwidth
 set formatoptions=tcroql    " Setting text and comment formatting to auto
-set textwidth=80            " Lines are automatically wrapped after 80 columns
+"set textwidth=80            " Lines are automatically wrapped after 80 columns
 
 """" Reading/Writing
 set autowrite               " Stop complaining about unsaved buffers
@@ -200,7 +192,6 @@ if has("gui_running")
 endif
 
 
-
 " This beauty remembers where you were the last time you edited the file, and returns to the same position.
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
@@ -211,7 +202,14 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checkers = ['pylint']
+
+" configure lightline
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
+
+set statusline+=%{fugitive#statusline()}

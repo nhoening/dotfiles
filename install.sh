@@ -5,7 +5,7 @@ cd ~
 DOIT=1
 
 # check if files exist
-for F in .bashrc .zshrc .vimrc .gitconfig .hgrc .ssh/config  
+for F in .bashrc .zshrc .vimrc .gitconfig .gitignore_global .gitattributes_global .hgrc .ssh/config  
 do
     echo "checking $F ..."
     if [ -f "$F" ]; then
@@ -25,13 +25,14 @@ if [ $DOIT -eq 1 ]; then
     ln -fs dotfiles/.vimrc
     ln -fs dotfiles/.gitconfig
     ln -fs dotfiles/.gitignore_global
+    ln -fs dotfiles/.gitattributes_global
     ln -fs dotfiles/.hgrc
     ln -fs dotfiles/.pdbrc.py
     mkdir -p ~/.ssh
     ln -fs ~/dotfiles/.sshconfig ~/.ssh/config
 
     # make sure necessary tools are there
-    apt-get install vim-gtk git mercurial tmux
+    apt-get install vim-gtk git mercurial tmux jq
 
     # Get ZSH configured
     if [ -d ".oh-my-zsh" ]; then

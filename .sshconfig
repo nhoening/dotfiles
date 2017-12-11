@@ -19,33 +19,3 @@ Host bitbucket.org
   User nhoening
   IdentitiesOnly yes
   IdentityFile ~/.ssh/id_rsa_bitbucket
-
-Host jenkins
-  HostName jenkins-local.swcloud.nl
-  User ubuntu
-  IdentitiesOnly yes
-  IdentityFile ~/ssh_keys/softwear_eu_test_2014.pem
-
-Host cron-test
-  HostName cron.test.softwearconnect.com
-  User ubuntu
-  IdentitiesOnly yes
-  IdentityFile ~/.ssh/id_rsa_nic
-
-Host cron-staging
-  HostName cron.staging.softwearconnect.com
-  User ubuntu
-  IdentitiesOnly yes
-  IdentityFile ~/.ssh/id_rsa_nic
-
-Host cron-production
-  HostName cron.production.softwearconnect.com
-  User ubuntu
-  IdentitiesOnly yes
-  IdentityFile ~/.ssh/id_rsa_nic
-
-Host aws-ecs
-  HostName spynl-ecs.dev.swcloud.nl
-  User ec2-user
-  IdentitiesOnly yes
-  IdentityFile ~/ssh_keys/softwear_eu_test_2016.pem

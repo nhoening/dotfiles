@@ -4,8 +4,20 @@
 [push]
     default = simple
 [core]
-    excludesfile = ~/.gitignore_global
     editor = vim
+    excludesfile = ~/.gitignore_global
+    attributesfile = ~/.gitattributes_global
 [alias]
     tree = log --oneline --graph --decorate --all
 	lg = log --graph --branches --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+
+[filter "nbstrip_full"]
+clean = "jq --indent 1 \
+        '(.cells[] | select(has(\"outputs\")) | .outputs) = []  \
+        | (.cells[] | select(has(\"execution_count\")) | .execution_count) = null  \
+        | .metadata = {\"language_info\": {\"name\": \"python\", \"pygments_lexer\": \"ipython3\"}} \
+        | .cells[].metadata = {} \
+        '"
+smudge = cat
+required = true
