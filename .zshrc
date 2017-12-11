@@ -82,7 +82,8 @@ source ~/multi-shell-repo-prompt/prompt.sh
 #source ~/dotfiles/hg-completion.bash  # is bash-specific
 source ~/dotfiles/git-completion.bash
 
-export JAVA_HOME="/usr/java/latest8"
+# Senfal-specific (maybe detect where you are)
+#export JAVA_HOME="/usr/java/latest8"
 
 # added by Pew
 #source $(pew shell_config)
