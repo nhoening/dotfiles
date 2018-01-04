@@ -77,13 +77,14 @@ fi
 #
 #
 # Nics additions
+export PATH=$PATH:~/.local/bin  # when installing flux locally
 
 source ~/multi-shell-repo-prompt/prompt.sh
 #source ~/dotfiles/hg-completion.bash  # is bash-specific
 source ~/dotfiles/git-completion.bash
 
-# Senfal-specific (maybe detect where you are)
-#export JAVA_HOME="/usr/java/latest8"
-
 # added by Pew
 #source $(pew shell_config)
+
+# added by Anaconda3 installer
+export PATH="/home/nicolas/anaconda3/bin:$PATH"

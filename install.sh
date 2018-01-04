@@ -32,7 +32,7 @@ if [ $DOIT -eq 1 ]; then
     ln -fs ~/dotfiles/.sshconfig ~/.ssh/config
 
     # make sure necessary tools are there
-    apt-get install vim-gtk git mercurial tmux jq
+    sudo apt-get install zsh vim-gtk git mercurial tmux
 
     # Get ZSH configured
     if [ -d ".oh-my-zsh" ]; then
@@ -77,8 +77,9 @@ if [ $DOIT -eq 1 ]; then
     # configure tmux
     sudo apt-get install python3 python3-pip
     sudo pip3 install powerline_status
-    ln -s dotfiles/.tmux.config 
-    tmux source ~/.tmux.config
+    if [ -f "~/.tmux.conf" ]; then
+        ln -s dotfiles/.tmux.conf
+    fi
 
     # I currently want to use ZSH
     chsh -s /bin/zsh

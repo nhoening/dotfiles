@@ -22,7 +22,8 @@ Plugin 'tomasr/molokai'
 Plugin 'tpope/vim-repeat'
 Plugin 'ctrlpvim/ctrlp.vim'  " file/buffer finder :CtrlP [starting-directory]
 Plugin 'plasticboy/vim-markdown' 
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'sjl/gundo.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'phleet/vim-mercenary'  " :HGdiff {rev}, :Hgblame
 Plugin 'tpope/vim-fugitive'  " :Git {command}, :Gstatus, :Gblame

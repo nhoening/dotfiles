@@ -22,3 +22,6 @@ export IGNOREEOF=1
 #"e\[B": history-search-forward
 
 export JAVA_HOME="/usr/java/latest8"
+
+# added by Anaconda3 installer
+export PATH="/home/nicolas/anaconda3/bin:$PATH"
