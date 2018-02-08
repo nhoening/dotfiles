@@ -86,5 +86,10 @@ source ~/dotfiles/git-completion.bash
 # added by Pew
 #source $(pew shell_config)
 
+alias a1="cd ~/workspace/seita/a1-vpp; source activate a1-venv; git pull"
+
+alias vm1="ssh nhoening@185.95.31.20"
+alias vm2="ssh nhoening@185.107.225.151"
+
 # added by Anaconda3 installer
 export PATH="/home/nicolas/anaconda3/bin:$PATH"

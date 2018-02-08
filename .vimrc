@@ -29,7 +29,7 @@ Plugin 'phleet/vim-mercenary'  " :HGdiff {rev}, :Hgblame
 Plugin 'tpope/vim-fugitive'  " :Git {command}, :Gstatus, :Gblame
 Plugin 'mhinz/vim-signify'  " show SCM status of lines
 Plugin 'itchyny/lightline.vim'
-Plugin 'mitechie/pyflakes-pathogen'
+"Plugin 'mitechie/pyflakes-pathogen'
 Plugin 'morhetz/gruvbox'  " retro colour scheme
 Plugin 'altercation/vim-colors-solarized'
 
