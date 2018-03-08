@@ -91,5 +91,8 @@ alias a1="cd ~/workspace/seita/a1-vpp; source activate a1-venv; git pull"
 alias vm1="ssh nhoening@185.95.31.20"
 alias vm2="ssh nhoening@185.107.225.151"
 
+# US keyboard layout plus special characters (e.g. Umlauts) with Shift-Alt-" [o|u|a] 
+setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
+
 # added by Anaconda3 installer
 export PATH="/home/nicolas/anaconda3/bin:$PATH"
