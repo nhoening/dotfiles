@@ -13,12 +13,16 @@ secondDisplay='' # Second display port name will be stored here, need it when it
 
 
 function checkConnected {  # Will check if any new display has been connected or disconnected to the system. Runs the next function if anything new happens
-	
+
+    echo "check connection ..."
+
 	if [[ "`xrandr -q | grep ' connected' | wc -l`" == 1 ]]; then
 		currentState='single'
 	else
 		currentState='double'
 	fi
+
+    echo "current: $currentState, old was: $oldState"
 	
 	if [[ $currentState != $oldState ]]; then
 		doubleConnected

@@ -82,8 +82,11 @@ set wildmode=full             " <Tab> cycles between all matching choices.
 set enc=utf-8                 " the best all-purpose encoding
 
 " don't bell or blink
-set noerrorbells
-set vb t_vb=
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+    autocmd GUIEnter * set visualbell t_vb=
+endif
+set vb
 
 " Ignore these files when completing
 set wildignore+=*.o,*.obj,.git,*.pyc
