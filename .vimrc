@@ -32,6 +32,8 @@ Plugin 'itchyny/lightline.vim'
 "Plugin 'mitechie/pyflakes-pathogen'
 Plugin 'morhetz/gruvbox'  " retro colour scheme
 Plugin 'altercation/vim-colors-solarized'
+" Plugin 'ambv/black'  " Python code formatter, only works when vim is built
+"                        with Python>=3.6 (:py3 import sys; print(sys.version))
 
 let g:signify_vcs_list = [ 'hg', 'git' ]
 let g:signify_line_highlight = 1
@@ -210,6 +212,12 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checkers = ['pylint']
+
+" disable by default, run pylint via ctrl-w s and open error list window
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <C-w>s :SyntasticCheck<CR> :lopen<CR>
+
+
 
 " configure lightline
 let g:lightline = {

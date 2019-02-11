@@ -2,7 +2,7 @@
 
 # Setting the initial states of the screen. 
 # Found on https://forums.bunsenlabs.org/viewtopic.php?id=4258 
-# "Put this script in your autostart.sh file as "/path/to/script/autoscreens.sh &". 
+# "Put this script in your autostart.sh file as "bash /path/to/script/autoscreens.sh &". 
 # and you'll have the script set the screens every time you connect or disconnect a screen.
 # Works only for single screen - dual screen setups."
 

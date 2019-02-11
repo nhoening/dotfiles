@@ -64,12 +64,6 @@ else
   export EDITOR='gvim'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -77,16 +71,68 @@ fi
 #
 #
 # Nics additions
-export PATH=$PATH:~/.local/bin  # when installing flux locally
+#
+# Turn off system beep
+xset b off
+
+export PATH=$PATH:~/.local/bin  # used this when installing flux locally
 
 source ~/multi-shell-repo-prompt/prompt.sh
 #source ~/dotfiles/hg-completion.bash  # is bash-specific
 source ~/dotfiles/git-completion.bash
 
-alias a1="cd ~/workspace/seita/a1-vpp; source activate a1-venv; git pull; export BVP_ENVIRONMENT=Development"
+function setGitNicSeita(){
+    if [[ "$1" == "" ]]; then
+        echo "Usage: setGitNicSeita [github|bitbucket]"
+        return 2
+    fi
+    echo "Configuring git for Nicolas @ Seita ..."
+    if [[ "$1" == "bitbucket" ]]; then
+        echo "Setting bitbucket key ..."
+        ssh-add -D
+        ssh-add ~/.ssh/id_rsa_bitbucket
+    elif [[ "$1" == "github" ]]; then
+        echo "Setting github key ..."
+        ssh-add -D
+        ssh-add ~/.ssh/id_github
+    else
+        echo "$1 is not a supported host. Exiting ..."
+        return 2
+    fi
+    git config --global user.name "Nicolas Höning"
+    git config --global user.email "nicolas@seita.nl"
+}
+
+function setGitPrivateNicolas(){
+    ssh-add -D
+    echo "Configuring git for Nic private ..."
+    ssh-add ~/.ssh/id_github
+    git config --global user.name "Nicolas Höning"
+    git config --global user.email "iam@nicolashoening.de"
+}
+
+function setGitLegoLas(){
+    ssh-add -D
+    echo "Configuring git for Lego Las ..."
+    ssh-add ~/.ssh/id_gitlab_lego
+    git config --global user.name "Lego Las"
+    git config --global user.email "legoactionstorm@gmail.com"
+}
+
+alias bvp="setGitNicSeita bitbucket; cd ~/workspace/seita/bvp; git pull; source activate bvp-venv"
+alias ttm="setGitNicSeita github; cd ~/workspace/seita/ttm; source activate ts-fi-venv; git pull"
+alias tb="setGitNicSeita github; cd ~/workspace/seita/timely-beliefs; source activate tb-venv; git pull"
+alias ail="cd ~/workspace/seita/aileen; setGitNicSeita github; git pull; source activate aileen-django-venv; export HASH_MAC_ADDRESSES=false; export DISABLE_AUTO_TITLE=true; export WIFI_INTERFACES=wlx00c0ca979d1c,wlx00c0ca97227c,wlx00c0ca97227d; cd aileen"
+alias hiil="cd ~/workspace/seita/atlantis; setGitLegoLas; git pull; source activate hiil-venv"
+export PATH=$PATH:/home/nicolas/software/Cbc-2.9/bin;
 
 # US keyboard layout plus special characters (e.g. Umlauts) with Shift-Alt-" [o|u|a] 
 setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
 
 # added by Anaconda3 installer
 export PATH="/home/nicolas/anaconda3/bin:$PATH"
+
+# added by nvm install script
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
