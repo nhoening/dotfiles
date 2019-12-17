@@ -8,6 +8,11 @@ Host nh
   IdentitiesOnly yes
   User ssh-w00e4765
 
+Host seita
+  HostName seita.nl.w01a109a.kasserver.com
+  IdentitiesOnly yes
+  User ssh-w01a109a
+
 Host voko
   HostName order.vokomokum.nl
   User nicolas

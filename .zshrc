@@ -45,7 +45,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git,mercurial,aws,virtualenv,jira,python,docker)
+# plugins=(git aws virtualenv python docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -119,18 +119,53 @@ function setGitLegoLas(){
     git config --global user.email "legoactionstorm@gmail.com"
 }
 
+function setGitDigiB(){
+    ssh-add -D
+    echo "Configuring git for nicolas @ DigiB ..."
+    ssh-add ~/.ssh/id_digib
+    git config --global user.name "Nicolas Höning"
+    git config --global user.email "nicolas.honing@digib.com"
+}
+
+
 alias bvp="setGitNicSeita bitbucket; cd ~/workspace/seita/bvp; git pull; source activate bvp-venv"
-alias ttm="setGitNicSeita github; cd ~/workspace/seita/ttm; source activate ts-fi-venv; git pull"
+alias ttm="setGitNicSeita github; cd ~/workspace/seita/timetomodel; source activate ts-fi-venv; git pull"
 alias tb="setGitNicSeita github; cd ~/workspace/seita/timely-beliefs; source activate tb-venv; git pull"
-alias ail="cd ~/workspace/seita/aileen; setGitNicSeita github; git pull; source activate aileen-django-venv; export HASH_MAC_ADDRESSES=false; export DISABLE_AUTO_TITLE=true; export WIFI_INTERFACES=wlx00c0ca979d1c,wlx00c0ca97227c,wlx00c0ca97227d; cd aileen"
-alias hiil="cd ~/workspace/seita/atlantis; setGitLegoLas; git pull; source activate hiil-venv"
-export PATH=$PATH:/home/nicolas/software/Cbc-2.9/bin;
+alias digib="setGitDigiB; cd ~/workspace/digib/model-registry; git pull; pipenv install; pipenv shell"
+alias bvp="setGitNicSeita bitbucket; cd ~/workspace/seita/bvp; git pull; source activate bvp-venv"
+alias ail="cd ~/workspace/seita/aileen; setGitNicSeita github; git pull; source activate aileen-django-venv; cd aileen; export ACTIVATE_VENV_CMD='source activate aileen-django-venv'; export AILEEN_MODE=both"
+alias ailwifi="export HASH_OBSERVABLE_IDS=true; export DISABLE_AUTO_TITLE=true; export WIFI_INTERFACES=wlx00c0ca979d1c,wlx00c0ca979d1d,wlx00c0ca97227c,wlx00c0ca97227d; export FULL_PATH_TO_AIRMON_NG=/usr/local/sbin/airmon-ng; export FULL_PATH_TO_AIRODUMP=/usr/local/sbin/airodump-ng; export SENSOR_MODULE=sensor; export BOX_PORT=7891; export PYTHONPATH=/home/nicolas/workspace/seita/aileen-wifi; ail"
+alias aillan="export SENSOR_MODULE=sensor;export PYTHONPATH=/home/nicolas/workspace/seita/aileen-lan;export BOX_PORT=7890; export AILEEN_LAN_SUBNET_MASK=192.168.1.0/24; export AILEEN_LAN_TIMEZONE=Europe/Amsterdam; export AILEEN_LAN_INTERVAL_IN_SECONDS=40; ail"
+alias hiil="cd ~/workspace/seita/sjip; setGitLegoLas; git pull; source activate hiil-venv"
+alias vkmkm="cd ~/workspace/vokomokum/vkmkm-erp; setGitPrivateNicolas; git pull"
+alias fplay="setGitNicSeita bitbucket; cd ~/workspace/seita/forecasting-playground; source activate forecasting-playground-venv"
+alias weather="setGitNicSeita bitbucket; cd ~/workspace/seita/weatherforecaststorage; source activate weather-venv; export PYTHONPATH=/home/nicolas/workspace/seita/weatherforecaststorage"
+export PATH=$PATH:/bin/snap:/home/nicolas/software/Cbc-2.9/bin;
 
 # US keyboard layout plus special characters (e.g. Umlauts) with Shift-Alt-" [o|u|a] 
 setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
 
 # added by Anaconda3 installer
-export PATH="/home/nicolas/anaconda3/bin:$PATH"
+# export PATH="/home/nicolas/anaconda3/bin:$PATH"
+# This was recommended in recent release notes, but I believe Anaconda now activates base by default
+#. ~/anaconda3/conda/etc/profile.d/conda.sh
+#conda activate base
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/nicolas/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/nicolas/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/nicolas/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/nicolas/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
 
 # added by nvm install script
 export NVM_DIR="$HOME/.nvm"

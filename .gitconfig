@@ -1,5 +1,5 @@
 [user]
-	email = nicolas@seita.nl
+	email = iam@nicolashoening.de
 	name = Nicolas Höning
 [push]
     default = simple
@@ -10,7 +10,13 @@
 [alias]
     tree = log --oneline --graph --decorate --all
 	lg = log --graph --branches --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
 
 [filter "nbstrip_full"]
 clean = "jq --indent 1 \
@@ -21,3 +27,8 @@ clean = "jq --indent 1 \
         '"
 smudge = cat
 required = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
