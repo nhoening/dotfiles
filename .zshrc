@@ -127,16 +127,26 @@ function setGitDigiB(){
     git config --global user.email "nicolas.honing@digib.com"
 }
 
+function digib(){
+    if [[ "$1" == "" ]]; then
+        echo "Usage: digib [repo]"
+        return 2
+    fi
+    echo "Configuring git and env for repo $1 @ DigiB ..."
+    setGitDigiB
+    cd ~/workspace/digib/$1
+    git submodule update --init --recursive
+    git pull
+    pipenv install
+    #pipenv shell
+}
 
 alias bvp="setGitNicSeita bitbucket; cd ~/workspace/seita/bvp; git pull; source activate bvp-venv"
 alias ttm="setGitNicSeita github; cd ~/workspace/seita/timetomodel; source activate ts-fi-venv; git pull"
 alias tb="setGitNicSeita github; cd ~/workspace/seita/timely-beliefs; source activate tb-venv; git pull"
-alias digib="setGitDigiB; cd ~/workspace/digib/model-registry; git pull; pipenv install; pipenv shell"
-alias bvp="setGitNicSeita bitbucket; cd ~/workspace/seita/bvp; git pull; source activate bvp-venv"
 alias ail="cd ~/workspace/seita/aileen; setGitNicSeita github; git pull; source activate aileen-django-venv; cd aileen; export ACTIVATE_VENV_CMD='source activate aileen-django-venv'; export AILEEN_MODE=both"
 alias ailwifi="export HASH_OBSERVABLE_IDS=true; export DISABLE_AUTO_TITLE=true; export WIFI_INTERFACES=wlx00c0ca979d1c,wlx00c0ca979d1d,wlx00c0ca97227c,wlx00c0ca97227d; export FULL_PATH_TO_AIRMON_NG=/usr/local/sbin/airmon-ng; export FULL_PATH_TO_AIRODUMP=/usr/local/sbin/airodump-ng; export SENSOR_MODULE=sensor; export BOX_PORT=7891; export PYTHONPATH=/home/nicolas/workspace/seita/aileen-wifi; ail"
 alias aillan="export SENSOR_MODULE=sensor;export PYTHONPATH=/home/nicolas/workspace/seita/aileen-lan;export BOX_PORT=7890; export AILEEN_LAN_SUBNET_MASK=192.168.1.0/24; export AILEEN_LAN_TIMEZONE=Europe/Amsterdam; export AILEEN_LAN_INTERVAL_IN_SECONDS=40; ail"
-alias hiil="cd ~/workspace/seita/sjip; setGitLegoLas; git pull; source activate hiil-venv"
 alias vkmkm="cd ~/workspace/vokomokum/vkmkm-erp; setGitPrivateNicolas; git pull"
 alias fplay="setGitNicSeita bitbucket; cd ~/workspace/seita/forecasting-playground; source activate forecasting-playground-venv"
 alias weather="setGitNicSeita bitbucket; cd ~/workspace/seita/weatherforecaststorage; source activate weather-venv; export PYTHONPATH=/home/nicolas/workspace/seita/weatherforecaststorage"
@@ -171,3 +181,5 @@ unset __conda_setup
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source ~/dotfiles/k8s-aliases.sh
