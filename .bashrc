@@ -8,6 +8,10 @@ export HG_EDITOR=vim
 
 alias vpn="cd ~/workspace/sw-vpn/vpn_spynl-dev_nicolas && sudo openvpn openvpn-client.cfg"
 
+export PATH="/usr/local/bin:/usr/bin:/bin:$PATH"
+
+export PATH=$PATH:~/.local/bin
+
 # turn off system beep
 xset b off
 

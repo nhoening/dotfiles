@@ -26,7 +26,8 @@ ZSH_THEME="robbyrussell"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+# Nic: https://github.com/ohmyzsh/ohmyzsh/issues/6226#issuecomment-321682739
+#COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -141,7 +142,7 @@ function digib(){
     #pipenv shell
 }
 
-alias bvp="setGitNicSeita bitbucket; cd ~/workspace/seita/bvp; git pull; source activate bvp-venv"
+alias bvp="setGitNicSeita bitbucket; cd ~/workspace/seita/bvp; git pull; source activate sempras"
 alias ttm="setGitNicSeita github; cd ~/workspace/seita/timetomodel; source activate ts-fi-venv; git pull"
 alias tb="setGitNicSeita github; cd ~/workspace/seita/timely-beliefs; source activate tb-venv; git pull"
 alias ail="cd ~/workspace/seita/aileen; setGitNicSeita github; git pull; source activate aileen-django-venv; cd aileen; export ACTIVATE_VENV_CMD='source activate aileen-django-venv'; export AILEEN_MODE=both"
@@ -149,11 +150,13 @@ alias ailwifi="export HASH_OBSERVABLE_IDS=true; export DISABLE_AUTO_TITLE=true; 
 alias aillan="export SENSOR_MODULE=sensor;export PYTHONPATH=/home/nicolas/workspace/seita/aileen-lan;export BOX_PORT=7890; export AILEEN_LAN_SUBNET_MASK=192.168.1.0/24; export AILEEN_LAN_TIMEZONE=Europe/Amsterdam; export AILEEN_LAN_INTERVAL_IN_SECONDS=40; ail"
 alias vkmkm="cd ~/workspace/vokomokum/vkmkm-erp; setGitPrivateNicolas; git pull"
 alias fplay="setGitNicSeita bitbucket; cd ~/workspace/seita/forecasting-playground; source activate forecasting-playground-venv"
-alias weather="setGitNicSeita bitbucket; cd ~/workspace/seita/weatherforecaststorage; source activate weather-venv; export PYTHONPATH=/home/nicolas/workspace/seita/weatherforecaststorage"
+alias weather="setGitNicSeita github; cd ~/workspace/seita/weatherforecaststorage; source activate weather-venv; export PYTHONPATH=/home/nicolas/workspace/seita/weatherforecaststorage"
 export PATH=$PATH:/bin/snap:/home/nicolas/software/Cbc-2.9/bin;
 
 # US keyboard layout plus special characters (e.g. Umlauts) with Shift-Alt-" [o|u|a] 
 setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
+# Note: en-dash is Ctrl+Shift+U, then 2 0 1 3 and Enter
+# em-dash is 2014
 
 # added by Anaconda3 installer
 # export PATH="/home/nicolas/anaconda3/bin:$PATH"
