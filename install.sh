@@ -23,16 +23,15 @@ if [ $DOIT -eq 1 ]; then
     ln -fs dotfiles/.bashrc
     ln -fs dotfiles/.zshrc
     ln -fs dotfiles/.vimrc
-    ln -fs dotfiles/.gitconfig
-    ln -fs dotfiles/.gitignore_global
-    ln -fs dotfiles/.gitattributes_global
-    ln -fs dotfiles/.hgrc
+    ln -fs dotfiles/git/.gitconfig
+    ln -fs dotfiles/git/.gitignore_global
+    ln -fs dotfiles/git/.gitattributes_global
     ln -fs dotfiles/.pdbrc.py
     mkdir -p ~/.ssh
     ln -fs ~/dotfiles/.sshconfig ~/.ssh/config
 
     # make sure necessary tools are there
-    sudo apt-get install zsh vim-gtk git mercurial tmux
+    sudo apt-get install zsh vim-gtk git tmux
 
     # Get ZSH configured
     if [ -d ".oh-my-zsh" ]; then
@@ -54,11 +53,6 @@ if [ $DOIT -eq 1 ]; then
     fi
    
     # Get a repository-centric prompt
-    if [ -d "hg-prompt" ]; then
-        cd hg-prompt; hg pull; hg update; cd ..
-    else
-        hg clone http://bitbucket.org/sjl/hg-prompt/
-    fi
     if [ -d "multi-shell-repo-prompt" ]; then
         cd multi-shell-repo-prompt; git pull; cd ..
     else

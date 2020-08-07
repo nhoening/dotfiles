@@ -3,8 +3,7 @@ export GIT_EDITOR=vim
 export HG_EDITOR=vim
 
 . ~/multi-shell-repo-prompt/prompt.sh
-. ~/dotfiles/hg-completion.bash
-. ~/dotfiles/git-completion.bash
+. ~/dotfiles/git/git-completion.bash
 
 alias vpn="cd ~/workspace/sw-vpn/vpn_spynl-dev_nicolas && sudo openvpn openvpn-client.cfg"
 

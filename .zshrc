@@ -79,8 +79,7 @@ xset b off
 export PATH=$PATH:~/.local/bin  # used this when installing flux locally
 
 source ~/multi-shell-repo-prompt/prompt.sh
-#source ~/dotfiles/hg-completion.bash  # is bash-specific
-source ~/dotfiles/git-completion.bash
+source ~/dotfiles/git/git-completion.bash
 
 function setGitNicSeita(){
     if [[ "$1" == "" ]]; then
@@ -142,6 +141,11 @@ function digib(){
     #pipenv shell
 }
 
+# for virtualenv wrapper
+export WORKON_HOME=~/envs
+VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source virtualenvwrapper.sh
+
 alias bvp="setGitNicSeita bitbucket; cd ~/workspace/seita/bvp; git pull; source activate sempras"
 alias ttm="setGitNicSeita github; cd ~/workspace/seita/timetomodel; source activate ts-fi-venv; git pull"
 alias tb="setGitNicSeita github; cd ~/workspace/seita/timely-beliefs; source activate tb-venv; git pull"
@@ -180,9 +184,4 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
-# added by nvm install script
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-source ~/dotfiles/k8s-aliases.sh
+# source ~/dotfiles/k8s-aliases.sh
