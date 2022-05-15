@@ -20,6 +20,7 @@ do
 done
 
 if [ $DOIT -eq 1 ]; then
+    echo "Copying over configs ..."
     ln -fs dotfiles/.bashrc
     ln -fs dotfiles/.zshrc
     ln -fs dotfiles/.vimrc
@@ -31,20 +32,20 @@ if [ $DOIT -eq 1 ]; then
     ln -fs ~/dotfiles/.sshconfig ~/.ssh/config
 
     # make sure necessary tools are there
-    sudo apt-get install zsh vim-gtk git tmux
+    sudo apt-get install zsh vim-gtk git gh tmux
 
     # Get ZSH configured
     if [ -d ".oh-my-zsh" ]; then
         cd .oh-my-zsh; git pull; cd ..
     else
-        git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+        git repo clone robbyrussell/oh-my-zsh ~/.oh-my-zsh
     fi
     for PL in zsh-syntax-highlighting zsh-completions
     do
         if [ -d ".oh-my-zsh/custom/plugins/$PL" ]; then
             cd .oh-my-zsh/custom/plugins/$PL; git pull; cd ../../../..
         else
-            git clone git://github.com/zsh-users/$PL.git ~/.oh-my-zsh/custom/plugins/$PL
+            gh repo clone zsh-users/$PL ~/.oh-my-zsh/custom/plugins/$PL
         fi
     done
 
@@ -52,18 +53,18 @@ if [ $DOIT -eq 1 ]; then
     if [ -d ".vim/bundle/Vundle.vim" ]; then
         cd .vim/bundle/Vundle.vim; git pull; cd ../../..
     else
-        git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+        gh repo clone gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
     fi
    
     # Get a repository-centric prompt
     if [ -d "multi-shell-repo-prompt" ]; then
         cd multi-shell-repo-prompt; git pull; cd ..
     else
-        git clone https://github.com/dotcode/multi-shell-repo-prompt.git
+        gh repo clone dotcode/multi-shell-repo-prompt
     fi
     
     # install YouCompleteMe
-    sudo apt-get install build-essential cmake python-dev python3-dev
+    sudo apt-get install build-essential cmake python3-dev
     cd ~/.vim/bundle/YouCompleteMe
     ./install.py
     cd ~
@@ -73,7 +74,7 @@ if [ $DOIT -eq 1 ]; then
 
     # configure tmux
     sudo apt-get install python3 python3-pip
-    sudo pip3 install powerline_status
+    sudo pip install powerline_status
     if [ -f "~/.tmux.conf" ]; then
         ln -s dotfiles/.tmux.conf
     fi

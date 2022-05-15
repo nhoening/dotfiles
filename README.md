@@ -2,7 +2,8 @@ Configuraton files for my machines (mostly works with other Posix systems, but I
 work on Debian).
 Inspired by devs greater than me, who I thank in the files. Installation:
 
-    git clone https://github.com/nhoening/dotfiles
+    cd ~  # assume to be in the home dir
+    gh repo clone nhoening/dotfiles
     ./dotfiles/install.sh
 
 NOTE: sudo should not be used in order to save typing in a password, as most of
