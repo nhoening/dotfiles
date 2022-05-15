@@ -27,6 +27,11 @@ export IGNOREEOF=1
 #"e\[A": history-search-backward
 #"e\[B": history-search-forward
 
+# US keyboard layout plus special characters (e.g. Umlauts) with Shift-Alt-" [o|u|a] 
+setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
+# Note: en-dash is Ctrl+Shift+U, then 2 0 1 3 and Enter
+# em-dash is 2014
+
 # added by Anaconda3 installer
 # export PATH="/home/nicolas/anaconda3/bin:$PATH"  # commented out by conda initialize
 

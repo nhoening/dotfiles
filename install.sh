@@ -39,12 +39,15 @@ if [ $DOIT -eq 1 ]; then
     else
         git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     fi
-    if [ -d ".oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
-        cd .oh-my-zsh/custom/plugins/zsh-syntax-highlighting; git pull; cd ../../../..
-    else
-        git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-    fi
-  
+    for PL in zsh-syntax-highlighting zsh-completions
+    do
+        if [ -d ".oh-my-zsh/custom/plugins/$PL" ]; then
+            cd .oh-my-zsh/custom/plugins/$PL; git pull; cd ../../../..
+        else
+            git clone git://github.com/zsh-users/$PL.git ~/.oh-my-zsh/custom/plugins/$PL
+        fi
+    done
+
     # Get VIM bundle (plugin) infrastructure
     if [ -d ".vim/bundle/Vundle.vim" ]; then
         cd .vim/bundle/Vundle.vim; git pull; cd ../../..

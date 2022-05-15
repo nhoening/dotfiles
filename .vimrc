@@ -32,8 +32,9 @@ Plugin 'itchyny/lightline.vim'
 "Plugin 'mitechie/pyflakes-pathogen'
 Plugin 'morhetz/gruvbox'  " retro colour scheme
 Plugin 'altercation/vim-colors-solarized'
-" Plugin 'ambv/black'  " Python code formatter, only works when vim is built
-"                        with Python>=3.6 (:py3 import sys; print(sys.version))
+"Plugin 'psf/black'  " Python code formatter, only works when vim is built
+"                    " with Python>=3.6 (:py3 import sys; print(sys.version))
+" see also https://github.com/psf/black/issues/1304
 
 let g:signify_vcs_list = [ 'hg', 'git' ]
 let g:signify_line_highlight = 1

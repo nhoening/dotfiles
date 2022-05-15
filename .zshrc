@@ -47,6 +47,11 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git aws virtualenv python docker)
+plugins=(zsh-completions git virtualenvwrapper python docker docker-compose)
+
+# this helps completion
+zstyle ':completion:*:*:make:*' tag-order 'targets'
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
@@ -146,21 +151,22 @@ export WORKON_HOME=~/envs
 VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source virtualenvwrapper.sh
 
-alias bvp="setGitNicSeita bitbucket; cd ~/workspace/seita/bvp; git pull; source activate sempras"
-alias ttm="setGitNicSeita github; cd ~/workspace/seita/timetomodel; source activate ts-fi-venv; git pull"
-alias tb="setGitNicSeita github; cd ~/workspace/seita/timely-beliefs; source activate tb-venv; git pull"
+alias fm="setGitNicSeita github; cd ~/workspace/seita/flexmeasures; git pull; workon sempras; make install-for-dev"
+alias ttm="setGitNicSeita github; cd ~/workspace/seita/timetomodel; workon time_to_model; git pull"
+alias tb="setGitNicSeita github; cd ~/workspace/seita/timely-beliefs; workon timely_beliefs; git pull"
 alias ail="cd ~/workspace/seita/aileen; setGitNicSeita github; git pull; source activate aileen-django-venv; cd aileen; export ACTIVATE_VENV_CMD='source activate aileen-django-venv'; export AILEEN_MODE=both"
 alias ailwifi="export HASH_OBSERVABLE_IDS=true; export DISABLE_AUTO_TITLE=true; export WIFI_INTERFACES=wlx00c0ca979d1c,wlx00c0ca979d1d,wlx00c0ca97227c,wlx00c0ca97227d; export FULL_PATH_TO_AIRMON_NG=/usr/local/sbin/airmon-ng; export FULL_PATH_TO_AIRODUMP=/usr/local/sbin/airodump-ng; export SENSOR_MODULE=sensor; export BOX_PORT=7891; export PYTHONPATH=/home/nicolas/workspace/seita/aileen-wifi; ail"
 alias aillan="export SENSOR_MODULE=sensor;export PYTHONPATH=/home/nicolas/workspace/seita/aileen-lan;export BOX_PORT=7890; export AILEEN_LAN_SUBNET_MASK=192.168.1.0/24; export AILEEN_LAN_TIMEZONE=Europe/Amsterdam; export AILEEN_LAN_INTERVAL_IN_SECONDS=40; ail"
-alias vkmkm="cd ~/workspace/vokomokum/vkmkm-erp; setGitPrivateNicolas; git pull"
+alias vkmkm="cd ~/workspace/vokomokum/vkmkm-erp; setGitPrivateNicolas; git pull; workon vkmkm"
 alias fplay="setGitNicSeita bitbucket; cd ~/workspace/seita/forecasting-playground; source activate forecasting-playground-venv"
 alias weather="setGitNicSeita github; cd ~/workspace/seita/weatherforecaststorage; source activate weather-venv; export PYTHONPATH=/home/nicolas/workspace/seita/weatherforecaststorage"
 export PATH=$PATH:/bin/snap:/home/nicolas/software/Cbc-2.9/bin;
 
 # US keyboard layout plus special characters (e.g. Umlauts) with Shift-Alt-" [o|u|a] 
 setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
-# Note: en-dash is Ctrl+Shift+U, then 2 0 1 3 and Enter
+# Note: en-dash is Ctrl+Shift+U, then 2 0 1 5 and Enter
 # em-dash is 2014
+# underscore u is 2082
 
 # added by Anaconda3 installer
 # export PATH="/home/nicolas/anaconda3/bin:$PATH"
