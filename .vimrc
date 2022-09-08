@@ -24,13 +24,13 @@ Plugin 'ctrlpvim/ctrlp.vim'  " file/buffer finder :CtrlP [starting-directory]
 Plugin 'plasticboy/vim-markdown' 
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'sjl/gundo.vim'
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
 Plugin 'phleet/vim-mercenary'  " :HGdiff {rev}, :Hgblame
 Plugin 'tpope/vim-fugitive'  " :Git {command}, :Gstatus, :Gblame
 Plugin 'mhinz/vim-signify'  " show SCM status of lines
 Plugin 'itchyny/lightline.vim'
 "Plugin 'mitechie/pyflakes-pathogen'
-Plugin 'morhetz/gruvbox'  " retro colour scheme
+"Plugin 'morhetz/gruvbox'  " retro colour scheme
 Plugin 'altercation/vim-colors-solarized'
 "Plugin 'psf/black'  " Python code formatter, only works when vim is built
 "                    " with Python>=3.6 (:py3 import sys; print(sys.version))
@@ -165,7 +165,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 map <C-space> :bn <CR>
 map <C-M-space> :bp <CR>
 
-colorscheme gruvbox
+"colorscheme gruvbox
 "colorscheme solarized
 set background=dark
 "set background=light
@@ -203,20 +203,20 @@ endif
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 " Syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
 
-let g:syntastic_python_checkers = ['pylint']
+" let g:syntastic_python_checkers = ['pylint']
 
 " disable by default, run pylint via ctrl-w s and open error list window
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-nnoremap <C-w>s :SyntasticCheck<CR> :lopen<CR>
+" let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+" nnoremap <C-w>s :SyntasticCheck<CR> :lopen<CR>
 
 
 
@@ -225,4 +225,4 @@ let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
 
-set statusline+=%{fugitive#statusline()}
+"set statusline+=%{fugitive#statusline()}
