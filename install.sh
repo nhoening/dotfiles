@@ -32,14 +32,14 @@ if [ $DOIT -eq 1 ]; then
     ln -fs ~/dotfiles/.sshconfig ~/.ssh/config
 
     # make sure necessary tools are there
-    sudo apt-get install zsh vim-gtk git gh # tmux
+    sudo apt-get install zsh vim-gtk git gh python3-pip # tmux
+    pip3 install virtualenvwrapper
 
     # Get ZSH configured
     if [ -d ".oh-my-zsh" ]; then
-            cd .oh-my-zsh; git pull; cd ..
+        cd .oh-my-zsh; git pull; cd ..
     else
-        gh repo clone robbyrussell/oh-my-zsh
-        mv oh-my-zsh ~/.oh-my-zsh
+        git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
     fi
     for PL in zsh-syntax-highlighting zsh-completions
     do
@@ -58,5 +58,6 @@ if [ $DOIT -eq 1 ]; then
     fi
     
     # I currently want to use ZSH
-    chsh -s /bin/zsh
+    chsh -s $(which zsh)
+
 fi
