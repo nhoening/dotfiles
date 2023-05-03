@@ -32,13 +32,14 @@ if [ $DOIT -eq 1 ]; then
     ln -fs ~/dotfiles/.sshconfig ~/.ssh/config
 
     # make sure necessary tools are there
-    sudo apt-get install zsh vim-gtk git gh tmux
+    sudo apt-get install zsh vim-gtk git gh # tmux
 
     # Get ZSH configured
     if [ -d ".oh-my-zsh" ]; then
-        cd .oh-my-zsh; git pull; cd ..
+            cd .oh-my-zsh; git pull; cd ..
     else
-        git repo clone robbyrussell/oh-my-zsh ~/.oh-my-zsh
+        gh repo clone robbyrussell/oh-my-zsh
+        mv oh-my-zsh ~/.oh-my-zsh
     fi
     for PL in zsh-syntax-highlighting zsh-completions
     do
@@ -49,13 +50,6 @@ if [ $DOIT -eq 1 ]; then
         fi
     done
 
-    # Get VIM bundle (plugin) infrastructure
-    if [ -d ".vim/bundle/Vundle.vim" ]; then
-        cd .vim/bundle/Vundle.vim; git pull; cd ../../..
-    else
-        gh repo clone gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
-    fi
-   
     # Get a repository-centric prompt
     if [ -d "multi-shell-repo-prompt" ]; then
         cd multi-shell-repo-prompt; git pull; cd ..
@@ -63,22 +57,6 @@ if [ $DOIT -eq 1 ]; then
         gh repo clone dotcode/multi-shell-repo-prompt
     fi
     
-    # install YouCompleteMe
-    sudo apt-get install build-essential cmake python3-dev
-    cd ~/.vim/bundle/YouCompleteMe
-    ./install.py
-    cd ~
-
-    # install vim bundles (vundle Plugins)
-    vim +PluginInstall +qall
-
-    # configure tmux
-    sudo apt-get install python3 python3-pip
-    sudo pip install powerline_status
-    if [ -f "~/.tmux.conf" ]; then
-        ln -s dotfiles/.tmux.conf
-    fi
-
     # I currently want to use ZSH
     chsh -s /bin/zsh
 fi

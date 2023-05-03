@@ -124,28 +124,6 @@ function setGitLegoLas(){
     git config --global user.email "legoactionstorm@gmail.com"
 }
 
-function setGitDigiB(){
-    ssh-add -D
-    echo "Configuring git for nicolas @ DigiB ..."
-    ssh-add ~/.ssh/id_digib
-    git config --global user.name "Nicolas Höning"
-    git config --global user.email "nicolas.honing@digib.com"
-}
-
-function digib(){
-    if [[ "$1" == "" ]]; then
-        echo "Usage: digib [repo]"
-        return 2
-    fi
-    echo "Configuring git and env for repo $1 @ DigiB ..."
-    setGitDigiB
-    cd ~/workspace/digib/$1
-    git submodule update --init --recursive
-    git pull
-    pipenv install
-    #pipenv shell
-}
-
 # for virtualenv wrapper
 export WORKON_HOME=~/envs
 VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
@@ -163,7 +141,7 @@ alias weather="setGitNicSeita github; cd ~/workspace/seita/weatherforecaststorag
 export PATH=$PATH:/bin/snap:/home/nicolas/software/Cbc-2.9/bin;
 
 # US keyboard layout plus special characters (e.g. Umlauts) with Shift-Alt-" [o|u|a] 
-setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
+# setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
 # Note: en-dash is Ctrl+Shift+U, then 2 0 1 5 and Enter
 # em-dash is 2014
 # underscore u is 2082
