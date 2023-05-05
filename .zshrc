@@ -129,7 +129,7 @@ export WORKON_HOME=~/envs
 VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source virtualenvwrapper.sh
 
-alias fm="setGitNicSeita github; cd ~/workspace/seita/flexmeasures; git pull; workon fm-env-39; make install-for-dev"
+alias fm="setGitNicSeita github; cd ~/workspace/seita/flexmeasures; git pull; workon fm-env-3.10; make install-for-dev"
 alias ttm="setGitNicSeita github; cd ~/workspace/seita/timetomodel; workon time_to_model; git pull"
 alias tb="setGitNicSeita github; cd ~/workspace/seita/timely-beliefs; workon timely_beliefs; git pull"
 alias ail="cd ~/workspace/seita/aileen; setGitNicSeita github; git pull; source activate aileen-django-venv; cd aileen; export ACTIVATE_VENV_CMD='source activate aileen-django-venv'; export AILEEN_MODE=both"

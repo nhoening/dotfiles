@@ -50,6 +50,10 @@ if [ $DOIT -eq 1 ]; then
         fi
     done
 
+    # Link dictionaries so spellright in VisualStudio can use them
+    mkdir $HOME/.config/Code/Dictionaries
+    ln -s /usr/share/hunspell/* ~/.config/Code/Dictionaries
+    
     # Get a repository-centric prompt
     if [ -d "multi-shell-repo-prompt" ]; then
         cd multi-shell-repo-prompt; git pull; cd ..
