@@ -86,6 +86,11 @@ export PATH=$PATH:~/.local/bin  # used this when installing flux locally
 source ~/multi-shell-repo-prompt/prompt.sh
 source ~/dotfiles/git/git-completion.bash
 
+# Let Visual Studio's SpellRight add-on use the system dictionaries
+mkdir $HOME/.config/Code/Dictionaries
+ln -s /usr/share/hunspell/* ~/.config/Code/Dictionaries
+
+
 function setGitNicSeita(){
     if [[ "$1" == "" ]]; then
         echo "Usage: setGitNicSeita [github|bitbucket]"
