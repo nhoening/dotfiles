@@ -87,9 +87,14 @@ source ~/multi-shell-repo-prompt/prompt.sh
 source ~/dotfiles/git/git-completion.bash
 
 # Let Visual Studio's SpellRight add-on use the system dictionaries
-mkdir $HOME/.config/Code/Dictionaries
-ln -s /usr/share/hunspell/* ~/.config/Code/Dictionaries
-
+# create directory
+if [[ ! -d $HOME/.config/Code/Dictionaries ]]; then
+    mkdir $HOME/.config/Code/Dictionaries
+fi
+# link dicts if there are no links yet
+if [[ -z "$(ls -A $HOME/.config/Code/Dictionaries)" ]]; then
+    ln -s /usr/share/hunspell/* ~/.config/Code/Dictionaries
+fi
 
 function setGitNicSeita(){
     if [[ "$1" == "" ]]; then
